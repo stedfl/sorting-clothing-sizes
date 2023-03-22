@@ -116,7 +116,6 @@ if(invalidItems.length) {
 
 function sortingSize(array, sizes) {
 
-  invalidItems = [];
   const arr = array.filter((item) => {
     const valid = sizes.includes(item.replace(/\s+/g, "").toLowerCase());
     if (!valid) {
@@ -124,10 +123,6 @@ function sortingSize(array, sizes) {
     }
     return valid;
   });
-
-  if(invalidItems.length) {
-    console.log("Taglie non esistenti: " + invalidItems);
-  }
   
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length - i - 1; j++) {
